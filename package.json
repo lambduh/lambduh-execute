@@ -1,0 +1,36 @@
+{
+  "name": "lambduh-execute",
+  "version": "1.0.0",
+  "description": "Execute any shell string via node.exec",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lambduh/lambduh-execute.git"
+  },
+  "keywords": [
+    "lambda",
+    "aws",
+    "exec",
+    "execute",
+    "shell"
+  ],
+  "author": "Russell Matney <russell.matney@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lambduh/lambduh-execute/issues"
+  },
+  "homepage": "https://github.com/lambduh/lambduh-execute",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "chai-fs": "git://github.com/carrot/chai-fs.git#version-bump",
+    "gulp": "^3.8.11",
+    "gulp-mocha": "^2.0.0",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "q": "^1.2.0"
+  }
+}
