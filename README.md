@@ -23,6 +23,13 @@ exports.handler = function(event, context) {
     showOutput: true
   }) // copies an ffmpeg binary to /tmp/ and chmods permissions to run it
   
+  //if you need data on the options object, wrap and return the promise
+  promises.push(function(options) {
+    return execute({
+      shell: "rm " + options.mp4Path
+    })(options);
+  }) // pulls in path from options object to fire dynamic script
+  
   promises.push(function(options) {
     context.done()
   })
