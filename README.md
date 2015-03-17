@@ -1,5 +1,5 @@
 # lambduh-execute
-Execute any shell string via node.exec
+Execute any shell string or bash script from AWS Lambda
 
 # Usage
 
