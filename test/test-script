@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "new file content" >> './test/file.txt'
