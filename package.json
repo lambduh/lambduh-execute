@@ -1,6 +1,6 @@
 {
   "name": "lambduh-execute",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Execute any shell string via node.exec",
   "main": "index.js",
   "scripts": {
