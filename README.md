@@ -1,6 +1,12 @@
 # lambduh-execute
 Execute any shell string or bash script from AWS Lambda
 
+# Install
+
+```
+npm i --save lambduh-execute
+```
+
 # Usage
 
 ```javascript
