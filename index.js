@@ -8,6 +8,8 @@ module.exports = function(result, script) {
   if (!script) {
     def.resolve(result);
   } else if (script.shell) {
+    console.log('spawning shell');
+    console.log(script);
     proc.exec(script.shell, function(error, stdout, stderr) {
       if (error) {
         console.log("exec error: " + error);
@@ -25,6 +27,8 @@ module.exports = function(result, script) {
   } else if (script.bashScript) {
 
     var child = proc.spawn(script.bashScript, script.bashParams);
+    console.log('spawning script');
+    console.log(script);
     child.stdout.on('data', function(data) {
       if (script.logOutput) {
         console.log("exec stdout: " + data);
