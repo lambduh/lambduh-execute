@@ -29,20 +29,32 @@ module.exports = function(result, script) {
     var child = proc.spawn(script.bashScript, script.bashParams);
     console.log('spawning script');
     console.log(script);
+
     child.stdout.on('data', function(data) {
       if (script.logOutput) {
-        console.log("exec stdout: " + data);
+        console.log("exec stdout (data): " + data);
       }
     });
+    child.stdout.on('error', function(data) {
+      if (script.logOutput) {
+        console.log("exec stdout (error): " + data);
+      }
+    });
+
     child.stderr.on('data', function(data) {
       if (script.logOutput) {
-        console.log("exec stderr: " + data);
+        console.log("exec stderr (data): " + data);
+      }
+    });
+    child.stderr.on('error', function(data) {
+      if (script.logOutput) {
+        console.log("exec stderr (error): " + data);
       }
     });
 
     child.on('error', function(err) {
       if (script.logOutput) {
-        console.log('error');
+        console.log('exec child error');
         console.log(err);
       }
     });
