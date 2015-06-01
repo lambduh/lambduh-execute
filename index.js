@@ -39,11 +39,19 @@ module.exports = function(result, script) {
         console.log("exec stderr: " + data);
       }
     });
+
+    child.on('error', function(err) {
+      if (script.logOutput) {
+        console.log('error');
+        console.log(err);
+      }
+    });
+
     child.on('exit', function(code) {
       if (code != 0) {
         def.reject(new Error('error running bash script'));
       } else {
-        def.resolve(result)
+        def.resolve(result);
       }
     });
 
